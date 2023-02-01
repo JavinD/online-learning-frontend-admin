@@ -1,0 +1,69 @@
+$font-stack: "Open Sans";
+$primary-color: #f06001;
+$secondary-color: #2ca396;
+$primary-text-color: #002337;
+$secondary-text-color: #80868b;
+
+.navbar-unauth {
+  background-color: white;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  .container {
+    .navbar-nav {
+      .nav-link {
+        color: $secondary-text-color;
+
+        background-image: linear-gradient(
+          to right,
+          $primary-color,
+          $primary-color 50%,
+          $secondary-color 50%
+        );
+        font-size: 1.2rem;
+        font-weight: 600;
+        padding: 0.5rem 1rem;
+        background-size: 200% 100%;
+        background-position: -100%;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+          background-position: 0;
+        }
+
+        &:hover::before {
+          background-position: 0;
+        }
+      }
+    }
+  }
+  .brand-text {
+    font-weight: 900;
+    font-size: 1.5rem;
+    color: $primary-text-color;
+    background-image: linear-gradient(
+      to right,
+      $primary-color,
+      $primary-color 50%,
+      $primary-text-color 50%
+    );
+
+    background-size: 200% 100%;
+    background-position: -100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      background-position: 0;
+    }
+
+    &:hover::before {
+      background-position: 0;
+    }
+  }
+  padding-left: 0;
+  padding-right: 0;
+}

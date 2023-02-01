@@ -1,0 +1,43 @@
+$default-font: "Open Sans";
+$primary-color: #f06001;
+$secondary-color: #2ca396;
+$primary-text-color: #002337;
+$secondary-text-color: #80868b;
+
+.page-link {
+  color: #002337;
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f1;
+  font-size: 1rem;
+  font-weight: 700;
+
+  &:hover {
+    background-color: #012237;
+    color: #f0f0f1;
+    text-decoration: none;
+  }
+}
+
+.page-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  margin: 0 5px;
+
+  &:hover {
+    background-color: #ccc;
+  }
+
+  .active {
+    background-color: #012237;
+    color: #f0f0f1;
+    text-decoration: none;
+  }
+}

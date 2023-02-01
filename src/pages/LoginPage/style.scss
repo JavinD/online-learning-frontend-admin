@@ -1,0 +1,43 @@
+$primary-color: #f06001;
+$secondary-color: #2ca396;
+$primary-text-color: #002337;
+$secondary-text-color: #80868b;
+
+.row {
+  --bs-gutter-x: 0;
+}
+
+.login-hero {
+  background: linear-gradient(
+    to bottom right,
+    $secondary-color,
+    $primary-color
+  );
+  height: 100%;
+
+  .login-hero-box {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 4rem 4rem;
+    margin: 0 10rem;
+
+    .login-hero-text {
+      padding-right: 5rem;
+      .login-hero-heading {
+        color: white;
+        font-size: 4rem;
+        font-weight: 500;
+        margin-bottom: 1rem;
+
+        .primary-text {
+          color: $primary-text-color;
+        }
+      }
+      .login-hero-subheading {
+        color: white;
+        font-size: 1.5rem;
+        font-weight: 300;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}

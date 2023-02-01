@@ -1,24 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Route } from "react-router-dom";
+import "./App.css";
+import DashboardPage from "./pages/Admin/DashboardPage";
+import AuthenticatedOnlyPage from "./pages/AuthenticatedOnlyPage";
+import LayoutPage from "./pages/LayoutPage";
+import LoginPage from "./pages/LoginPage";
+import NotFoundPage from "./pages/NotFoundPage";
+import UnauthenticatedOnlyPage from "./pages/UnauthenticatedOnlyPage";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Route element={<LayoutPage />}>
+        <Route element={<AuthenticatedOnlyPage />}>
+          <Route path="/admin">
+            <Route index element={<DashboardPage />} />
+          </Route>
+        </Route>
+        <Route element={<UnauthenticatedOnlyPage />}>
+          <Route path="admin-login" element={<LoginPage />} />
+        </Route>
+      </Route>
+      <Route path="*" element={<NotFoundPage />} />
     </div>
   );
 }

@@ -1,0 +1,135 @@
+$font-stack: "Open Sans";
+$primary-color: #f06001;
+$secondary-color: #2ca396;
+$primary-text-color: #002337;
+$secondary-text-color: #80868b;
+
+.navbar-auth {
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+
+  .container {
+    .navbar-nav {
+      .nav-link {
+        color: $secondary-text-color;
+
+        background-image: linear-gradient(
+          to right,
+          $primary-color,
+          $primary-color 50%,
+          $secondary-color 50%
+        );
+        font-size: 1.2rem;
+        font-weight: 600;
+        padding: 0.5rem 1rem;
+        background-size: 200% 100%;
+        background-position: -100%;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+          background-position: 0;
+        }
+
+        &:hover::before {
+          background-position: 0;
+        }
+      }
+
+      .nav-item {
+        .nav-link {
+          font-size: 1.2rem;
+          font-weight: 600;
+          padding: 0.5rem 1rem;
+          color: #000;
+        }
+      }
+
+      .dropdown {
+        button {
+          &:hover {
+            background-position: 0;
+          }
+        }
+        .dropdown-toggle {
+          color: $secondary-text-color;
+          font-size: 1.2rem;
+          font-weight: 600;
+          padding: 0.5rem 1rem;
+        }
+        .dropdown-menu {
+          background-color: white;
+          border: 0;
+          box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+
+          .dropdown-item {
+            color: $secondary-text-color;
+            font-size: 1.2rem;
+            font-weight: 600;
+
+            padding: 0.5rem 1rem;
+            &:hover {
+              background-color: $secondary-color;
+              color: white;
+            }
+
+            &::after {
+              content: "";
+              display: block;
+              width: 0;
+              height: 2px;
+              background-color: $primary-color;
+              transition: width 0.3s;
+            }
+
+            &:hover::after {
+              width: 100%;
+              transition: width 0.3s;
+            }
+
+            &:focus {
+              background-color: $secondary-color;
+              color: white;
+            }
+
+            &.active {
+              background-color: $secondary-color;
+              color: white;
+            }
+          }
+        }
+      }
+    }
+  }
+  .brand-text {
+    font-weight: 900;
+    font-size: 1.5rem;
+    color: $primary-text-color;
+    background-image: linear-gradient(
+      to right,
+      $primary-color,
+      $primary-color 50%,
+      $primary-text-color 50%
+    );
+
+    background-size: 200% 100%;
+    background-position: -100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      background-position: 0;
+    }
+
+    &:hover::before {
+      background-position: 0;
+    }
+  }
+
+  padding-left: 0;
+  padding-right: 0;
+}
