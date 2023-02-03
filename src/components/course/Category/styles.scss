@@ -1,0 +1,15 @@
+.course-category {
+  font-size: 1rem;
+
+  text-transform: uppercase;
+  font-weight: 600;
+  background-color: #2ca396;
+  border-radius: 8px;
+  letter-spacing: 0.1rem;
+  padding: 0.5rem 0.8rem;
+
+  .course-category-text {
+    color: white;
+    margin: 0.3rem 0;
+  }
+}

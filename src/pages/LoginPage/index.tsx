@@ -19,7 +19,7 @@ export default function LoginPage() {
     identifier: "",
     password: "",
   });
-  const [cookies, setCookie] = useCookies(["access_token"]);
+  const [cookies, setCookie] = useCookies(["admin_token"]);
   const API_URL = process.env.REACT_APP_API_URL;
 
   const validateError = (name: string, value: string) => {
@@ -40,7 +40,7 @@ export default function LoginPage() {
       }
 
       if (value.length < 8 || value.length > 20) {
-        error = "Password is must be between 8 to 20 characters";
+        error = "Password must be between 8 to 20 characters";
       }
       setError({
         ...errors,
@@ -75,7 +75,7 @@ export default function LoginPage() {
       })
       .then((res) => {
         if (res.access_token) {
-          setCookie("access_token", res.access_token, { path: "/" });
+          setCookie("admin_token", res.access_token, { path: "/" });
         }
 
         navigate("/");
@@ -92,10 +92,9 @@ export default function LoginPage() {
         <div className="login-hero-box">
           <div className="login-hero-text">
             <h2 className="login-hero-heading">
-              Digital platform for online{" "}
-              <strong className="primary-text">learning.</strong>
+              Admin Login <strong className="primary-text">DigiEdu</strong>
             </h2>
-            <h3 className="login-hero-subheading">asdadsasdas</h3>
+            <h3 className="login-hero-subheading">Admin Login</h3>
           </div>
         </div>
       </div>

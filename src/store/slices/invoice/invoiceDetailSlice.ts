@@ -4,7 +4,7 @@ import {
   createSlice,
   ThunkDispatch,
 } from "@reduxjs/toolkit";
-import { IInvoice, IUserCourseRequest } from "../../../../interfaces";
+import { IInvoice, IUserCourseRequest } from "../../../interfaces";
 
 export interface IInvoiceDetailState {
   invoice: IInvoice | undefined;
@@ -17,12 +17,12 @@ export const fetchInvoiceDetail = createAsyncThunk<
   IUserCourseRequest,
   { rejectValue: string }
 >("FETCH_INVOICE_DETAIL", ({ access_token, id }, { rejectWithValue }) => {
-  const API_URL_USER_INVOICE =
-    process.env.REACT_APP_API_URL_AUTH_USER + "/invoice";
+  const API_URL_ADMIN_INVOICE =
+    process.env.REACT_APP_API__URL_AUTH_ADMIN + "/invoice";
 
   const idString = id?.toString();
 
-  return fetch(API_URL_USER_INVOICE + "/" + idString, {
+  return fetch(API_URL_ADMIN_INVOICE + "/" + idString, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",

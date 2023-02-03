@@ -1,5 +1,5 @@
 import { toast } from "react-toastify";
-import { ICartItem, ICourse, IUserCourse } from "../interfaces";
+import { ICartItem, IUserCourse } from "../interfaces";
 
 export const isAlphaNumeric = (str: string): boolean => {
   var code, i, len;
@@ -55,6 +55,7 @@ export const isCourseOwned = (
 export const toRupiah = (price: number): string => {
   return price.toLocaleString("id-ID", {
     style: "currency",
+    minimumSignificantDigits: 1,
     currency: "IDR",
   });
 };
@@ -69,20 +70,27 @@ export const countCartTotal = (cart: ICartItem[] | undefined): number => {
   }, 0);
 };
 
+export const countTotalAfterVoucher = (
+  price: number,
+  voucher: number
+): number => {
+  return price - voucher;
+};
+
 export const countTotalPrice = (
   price: number,
   discount: number,
   voucher: number
 ): number => {
-  const total = price - price * discount - voucher;
+  const totalAfterVoucher = countTotalAfterVoucher(price, voucher);
+  const finalTotal = totalAfterVoucher - discount * totalAfterVoucher;
 
-  if (total < 0) {
+  if (finalTotal < 0) {
     return 0;
   }
 
-  return total;
+  return finalTotal;
 };
-
 export const toastSuccess = (message: string) => {
   toast.success(message, {
     position: "top-right",

@@ -5,7 +5,7 @@ type Props = {
   label: string;
   type: string;
   formText: string;
-  value: string;
+  value?: string | number;
   onChange: ChangeEventHandler<HTMLInputElement>;
   name: string;
   error: string;

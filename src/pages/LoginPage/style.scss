@@ -8,15 +8,15 @@ $secondary-text-color: #80868b;
 }
 
 .login-hero {
-  background: linear-gradient(
-    to bottom right,
-    $secondary-color,
-    $primary-color
-  );
+  background-image: url(../../assets/low-poly-grid-haikei2.svg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   height: 100%;
 
   .login-hero-box {
-    background-color: rgba(255, 255, 255, 0.2);
+    background: linear-gradient(to right, $secondary-color, $primary-color);
+
     padding: 4rem 4rem;
     margin: 0 10rem;
 

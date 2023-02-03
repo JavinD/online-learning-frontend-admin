@@ -25,7 +25,7 @@ export default function LoginForm({ data, onChange, onSubmit, errors }: Props) {
     <div>
       <div className="form-container">
         <div className="form-login-text">
-          <h2 className="login-greeting login-row">Hi! 👋</h2>
+          <h2 className="login-greeting login-row">Hello! 🤓</h2>
           <h3 className="login-subgreeting">
             Enter your information to login.
           </h3>
@@ -56,9 +56,7 @@ export default function LoginForm({ data, onChange, onSubmit, errors }: Props) {
               required={true}
             />
           </div>
-          <h4 className="form-note">
-            New to DigiEdu? <NavLink to="/register">Register</NavLink>{" "}
-          </h4>
+
           <AuthButton classNames="login-btn" label="Login" isError={isError} />
         </form>
       </div>

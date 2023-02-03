@@ -8,7 +8,7 @@ import {
   IInvoice,
   IFilterRequest,
   IInvoicePagination,
-} from "../../../../interfaces";
+} from "../../../interfaces";
 
 export interface IInvoiceState {
   invoices: IInvoicePagination | undefined;
@@ -21,11 +21,11 @@ export const fetchInvoices = createAsyncThunk<
   IFilterRequest,
   { rejectValue: string }
 >("FETCH_INVOICES", (request, { rejectWithValue }) => {
-  const API_URL_USER_INVOICE =
-    process.env.REACT_APP_API_URL_AUTH_USER + "/invoice";
+  const API_URL_ADMIN_INVOICE =
+    process.env.REACT_APP_API__URL_AUTH_ADMIN + "/invoice";
 
   return fetch(
-    API_URL_USER_INVOICE +
+    API_URL_ADMIN_INVOICE +
       `?page=${request.page}&sortBy=${request.sortBy}&sortDir=${request.sortDir}&limit=${request.size}&tag=${request.tags}&status=${request.status}&transaction_date=${request.last}`,
     {
       method: "GET",

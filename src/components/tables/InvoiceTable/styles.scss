@@ -11,3 +11,26 @@ $secondary-text-color: #80868b;
   background-color: white;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
 }
+
+.table-body {
+  padding: 1rem;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+
+  .hide {
+    display: none;
+  }
+}
+th {
+  vertical-align: middle;
+}
+
+td {
+  vertical-align: middle;
+}

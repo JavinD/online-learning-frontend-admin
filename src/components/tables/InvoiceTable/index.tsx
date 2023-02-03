@@ -6,9 +6,17 @@ import "./styles.scss";
 
 type Props = {
   invoices: IInvoicePagination | undefined;
+  handleCancelInvoice: (id: string, action: string) => void;
+  handleConfirmInvoice: (id: string, action: string) => void;
 };
 
-export default function InvoiceTable({ invoices }: Props) {
+export default function InvoiceTable({
+  invoices,
+  handleCancelInvoice,
+  handleConfirmInvoice,
+}: Props) {
+  const actionCancel = "cancel";
+  const actionConfirm = "confirm";
   const navigate = useNavigate();
   const chooseClassForStatus = (status: string): string => {
     switch (status) {
@@ -41,7 +49,7 @@ export default function InvoiceTable({ invoices }: Props) {
   };
 
   return (
-    <div className="container">
+    <div>
       {/* Invoices Table */}
       <div className="row table-container">
         <div className="col-lg-12">
@@ -58,12 +66,12 @@ export default function InvoiceTable({ invoices }: Props) {
                   <th scope="col">Action</th>
                 </tr>
               </thead>
-              <tbody>
-                {invoices?.data &&
+              <tbody className="table-body">
+                {invoices?.data ? (
                   invoices.data.map((invoice, index) => {
                     return (
                       <tr key={invoice.id}>
-                        <th scope="row">{index + 1}</th>
+                        <th scope="row ">{index + 1}</th>
                         <TableItem child={invoice.id} />
                         <TableItem child={toRupiah(invoice.total)} />
                         <TableItem child={toDate(invoice.created_at)} />
@@ -87,19 +95,62 @@ export default function InvoiceTable({ invoices }: Props) {
                         />
                         <TableItem
                           child={
-                            <button
-                              onClick={() => {
-                                navigate(`/user/invoice/${invoice.id}`);
-                              }}
-                              className="btn btn-sm btn-primary"
-                            >
-                              Details
-                            </button>
+                            <div className="action-buttons">
+                              <button
+                                onClick={() => {
+                                  navigate(`/invoice/${invoice.id}`);
+                                }}
+                                className="btn btn-sm btn-primary"
+                              >
+                                Details
+                              </button>
+
+                              <button
+                                onClick={() =>
+                                  handleConfirmInvoice(
+                                    invoice.id.toString(),
+                                    actionConfirm
+                                  )
+                                }
+                                className={
+                                  "btn btn-sm btn-success " +
+                                  (invoice.status !== "awaiting_confirmation"
+                                    ? "d-none"
+                                    : "")
+                                }
+                              >
+                                Confirm
+                              </button>
+                              <button
+                                onClick={() =>
+                                  handleCancelInvoice(
+                                    invoice.id.toString(),
+                                    actionCancel
+                                  )
+                                }
+                                className={
+                                  "btn btn-sm btn-danger " +
+                                  (invoice.status === "completed" ||
+                                  invoice.status === "canceled"
+                                    ? "d-none"
+                                    : "")
+                                }
+                              >
+                                Cancel
+                              </button>
+                            </div>
                           }
                         />
                       </tr>
                     );
-                  })}
+                  })
+                ) : (
+                  <tr>
+                    <td colSpan={12} className="text-center">
+                      No Data
+                    </td>
+                  </tr>
+                )}
               </tbody>
             </table>
           </div>

@@ -1,0 +1,34 @@
+$default-font: "Open Sans";
+$primary-color: #f06001;
+$secondary-color: #2ca396;
+$primary-text-color: #002337;
+$secondary-text-color: #80868b;
+
+.cart-category {
+  .course-category {
+    font-size: 0.6rem;
+    font-weight: 600;
+    color: $primary-text-color;
+    border-radius: 0;
+    margin: 0.2rem 0;
+  }
+}
+
+.btn-remove {
+  margin-right: 1rem;
+  border-radius: 0;
+  border: 1px solid $primary-color;
+  background-color: white;
+  color: $primary-color;
+
+  &:hover {
+    background-color: red;
+    color: white;
+  }
+}
+
+.cart-item-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: $primary-text-color;
+}
