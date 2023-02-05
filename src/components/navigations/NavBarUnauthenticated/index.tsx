@@ -26,17 +26,8 @@ export default function NavBar() {
             id="navbarNavAltMarkup"
           >
             <div className="navbar-nav">
-              <NavLink className="nav-link ms-lg-5" aria-current="page" to="">
-                Home
-              </NavLink>
-              <NavLink className="nav-link ms-lg-5" to="/course">
-                Courses
-              </NavLink>
               <NavLink className="nav-link ms-lg-5" to="/user-login">
                 Login
-              </NavLink>
-              <NavLink className="nav-link ms-lg-5" to="/register">
-                Register
               </NavLink>
             </div>
           </div>

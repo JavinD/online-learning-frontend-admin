@@ -11,5 +11,9 @@ body {
 }
 
 .App {
-  font-family: "Lato", sans-serif;
+  font-family: $default-font, sans-serif;
+}
+
+textarea {
+  resize: none;
 }

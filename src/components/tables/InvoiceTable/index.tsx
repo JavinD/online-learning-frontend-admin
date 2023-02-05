@@ -67,7 +67,7 @@ export default function InvoiceTable({
                 </tr>
               </thead>
               <tbody className="table-body">
-                {invoices?.data ? (
+                {invoices?.data && invoices.data.length > 0 ? (
                   invoices.data.map((invoice, index) => {
                     return (
                       <tr key={invoice.id}>
