@@ -7,7 +7,6 @@ import CourseFilterForm from "../../../components/forms/CourseFilterForm";
 import GenericPagination from "../../../components/navigations/GenericPagination";
 import CourseTable from "../../../components/tables/CourseTable";
 import useDebounce from "../../../hooks/useDebounce";
-import { IFilterRequest } from "../../../interfaces";
 import { RootState } from "../../../store";
 import { fetchCategories } from "../../../store/slices/course/category/categorySlice";
 import {

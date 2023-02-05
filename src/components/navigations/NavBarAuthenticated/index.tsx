@@ -1,9 +1,6 @@
-import React, { MouseEventHandler, useRef } from "react";
+import React, { MouseEventHandler } from "react";
 import { useCookies } from "react-cookie";
-import { useDispatch, useSelector } from "react-redux";
 import { NavLink, useNavigate } from "react-router-dom";
-import { RootState } from "../../../store";
-import { UserDispatch } from "../../../store/slices/admin/userSlice";
 import "./style.scss";
 
 export default function NavBar() {

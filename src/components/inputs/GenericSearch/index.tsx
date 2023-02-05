@@ -7,7 +7,7 @@ type Props = {
 
 export default function GenericSearch({ handleSearchChange }: Props) {
   return (
-    <div className="input-group">
+    <div className="input-group mb-4">
       <span className="input-group-text bg-transparent">
         <img src={logo} alt="logo" />
       </span>
