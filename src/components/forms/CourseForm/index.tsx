@@ -1,18 +1,5 @@
-import { current } from "@reduxjs/toolkit";
-import React, { useEffect, useState } from "react";
-import { useCookies } from "react-cookie";
-import { useDispatch, useSelector } from "react-redux";
-import { ICategory, ICourse, ICourseDetail, ITag } from "../../../interfaces";
-import { RootState } from "../../../store";
-import {
-  CategoryDispatch,
-  fetchCategories,
-} from "../../../store/slices/course/category/categorySlice";
-import {
-  fetchTags,
-  TagDispatch,
-} from "../../../store/slices/course/tag/tagSlice";
-import { toastFailed, toastSuccess } from "../../../utils/util";
+import React from "react";
+import { ICategory, ICourseDetail, ITag } from "../../../interfaces";
 import GenericButton from "../../buttons/GenericButton";
 import GenericCreatableSelect from "../../inputs/GenericCreatableSelect";
 import GenericInput from "../../inputs/GenericInput";

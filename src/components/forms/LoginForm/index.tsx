@@ -1,5 +1,4 @@
-import React, { ChangeEventHandler, FormEventHandler } from "react";
-import { NavLink } from "react-router-dom";
+import { ChangeEventHandler, FormEventHandler } from "react";
 import { LoginRequest } from "../../../interfaces";
 import AuthButton from "../../buttons/AuthButton";
 import GenericInput from "../../inputs/GenericInput";
